@@ -447,6 +447,46 @@ let warningReason = "";
 // ============================
 
 let recommendation = "";
+  // ============================
+// ENGINEERING SCORE
+// ============================
+
+let score = 100;
+
+if (PF < engineeringDB.recommendedPF) score -= 15;
+
+if (L > 50) score -= 10;
+
+if (efficiency < engineeringDB.minimumEfficiency) score -= 15;
+
+if (score < 0) score = 0;
+  let scoreText = "";
+
+if(score >= 90){
+
+    scoreText = "⭐⭐⭐⭐⭐ Sangat Baik";
+
+}
+else if(score >= 75){
+
+    scoreText = "⭐⭐⭐⭐ Baik";
+
+}
+else if(score >= 60){
+
+    scoreText = "⭐⭐⭐ Cukup";
+
+}
+else if(score >= 40){
+
+    scoreText = "⭐⭐ Perlu Perbaikan";
+
+}
+else{
+
+    scoreText = "⭐ Kondisi Kritis";
+
+}
 
 if(PF < engineeringDB.recommendedPF){
 
@@ -596,6 +636,26 @@ style="border:3px solid ${warningColor};">
 <div class="resultTitle">
 
 🚨 STATUS INSTALASI
+<div class="resultCard">
+
+<div class="resultTitle">
+
+🏆 SKOR INSTALASI
+
+</div>
+
+<div class="resultValue"
+style="font-size:28px;">
+
+${score}/100
+
+<br><br>
+
+${scoreText}
+
+</div>
+
+</div>
 <div class="analysisCard">
 
 <div class="analysisTitle">
