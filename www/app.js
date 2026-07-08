@@ -419,6 +419,39 @@ let warningColor = "#00c853";
 // ============================
 
 let warningReason = "";
+  // ============================
+// SMART RECOMMENDATION ENGINE
+// ============================
+
+let recommendation = "";
+
+if(PF < 0.80){
+
+    recommendation +=
+"💡 Pertimbangkan pemasangan Capacitor Bank.<br>";
+
+}
+
+if(L > 50){
+
+    recommendation +=
+"💡 Pertimbangkan menaikkan ukuran kabel.<br>";
+
+}
+
+if(efficiency < 85){
+
+    recommendation +=
+"💡 Periksa kondisi motor dan beban mekanis.<br>";
+
+}
+
+if(recommendation===""){
+
+    recommendation =
+"✅ Tidak ada rekomendasi khusus. Instalasi dalam kondisi baik.";
+
+}
 
 if (PF < 0.80) {
 
@@ -540,6 +573,21 @@ style="border:3px solid ${warningColor};">
 <div class="resultTitle">
 
 🚨 STATUS INSTALASI
+<div class="analysisCard">
+
+<div class="analysisTitle">
+
+💡 REKOMENDASI SISTEM
+
+</div>
+
+<div class="analysisText">
+
+${recommendation}
+
+</div>
+
+</div>
 
 
 </div>
