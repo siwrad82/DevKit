@@ -426,19 +426,6 @@ const kVAR = VAR / 1000;
     }
 
     // ============================
-    // ANALISA BEBAN
-    // ============================
-
-    let analisaBeban = "";
-
-    if (I < 16) {
-
-        analisaBeban = "Instalasi termasuk beban ringan.";
-
-    }
-    else if (I < 32) {
-
-      // ============================
 // SMART ANALYSIS ENGINE V3.1
 // ============================
 
@@ -458,7 +445,6 @@ if(loadType==="motor"){
 • Periksa suhu motor dan terminal secara berkala.`;
 
 }
-
 else if(loadType==="lighting"){
 
     analisaBeban=
@@ -471,7 +457,6 @@ else if(loadType==="lighting"){
 • Gunakan ukuran kabel yang sesuai dengan panjang instalasi.`;
 
 }
-
 else if(loadType==="heater"){
 
     analisaBeban=
@@ -484,7 +469,6 @@ else if(loadType==="heater"){
 • Pastikan MCCB dan kabel mampu bekerja terus-menerus pada beban penuh.`;
 
 }
-
 else{
 
     analisaBeban=
@@ -496,7 +480,7 @@ else{
 
 • Pastikan distribusi beban merata pada setiap fasa.`;
 
-    }
+}
       // ============================
     // HASIL PERHITUNGAN
     // ============================
