@@ -438,17 +438,63 @@ const kVAR = VAR / 1000;
     }
     else if (I < 32) {
 
-        analisaBeban = "Instalasi termasuk beban menengah. Pastikan sambungan kabel baik.";
+      // ============================
+// SMART ANALYSIS ENGINE V3.1
+// ============================
 
-    }
-    else if (I < 63) {
+let analisaBeban = "";
 
-        analisaBeban = "Arus cukup besar. Periksa suhu kabel dan panel secara berkala.";
+if(loadType==="motor"){
 
-    }
-    else {
+    analisaBeban=
+`🔧 Beban Motor
 
-        analisaBeban = "Arus tinggi. Disarankan dilakukan analisa engineering lebih lanjut.";
+• Motor memiliki faktor daya yang umumnya 0.80–0.90.
+
+• Pastikan arus tidak melebihi rating nameplate.
+
+• Jika banyak motor bekerja bersamaan, pertimbangkan pemasangan Capacitor Bank.
+
+• Periksa suhu motor dan terminal secara berkala.`;
+
+}
+
+else if(loadType==="lighting"){
+
+    analisaBeban=
+`💡 Beban Lampu
+
+• Fokus pada kestabilan tegangan.
+
+• Hindari voltage drop lebih dari 3%.
+
+• Gunakan ukuran kabel yang sesuai dengan panjang instalasi.`;
+
+}
+
+else if(loadType==="heater"){
+
+    analisaBeban=
+`🔥 Beban Heater
+
+• Heater merupakan beban resistif.
+
+• Power Factor biasanya mendekati 1.00.
+
+• Pastikan MCCB dan kabel mampu bekerja terus-menerus pada beban penuh.`;
+
+}
+
+else{
+
+    analisaBeban=
+`⚙ Beban Campuran
+
+• Evaluasi keseimbangan beban.
+
+• Periksa faktor daya sistem.
+
+• Pastikan distribusi beban merata pada setiap fasa.`;
 
     }
       // ============================
