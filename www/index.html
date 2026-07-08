@@ -85,13 +85,50 @@
             id="volt"
             type="number"
             placeholder="Tegangan (Volt)">
+      <h3>Frekuensi</h3>
+
+<select id="frequency">
+
+    <option value="50" selected>50 Hz</option>
+
+    <option value="60">60 Hz</option>
+
+</select>
 
         <input
             id="ampere"
             type="number"
             placeholder="Arus (Ampere)">
+      <h3>Efisiensi</h3>
+
+<select id="efficiency">
+
+    <option value="100">100 % (Ideal)</option>
+
+    <option value="95">95 %</option>
+
+    <option value="90" selected>90 % (Umum)</option>
+
+    <option value="85">85 %</option>
+
+    <option value="80">80 %</option>
+
+</select>
 
         <h3>Power Factor</h3>
+      <h3>Jenis Beban</h3>
+
+<select id="loadType">
+
+    <option value="motor" selected>Motor Listrik</option>
+
+    <option value="lighting">Lampu</option>
+
+    <option value="heater">Heater</option>
+
+    <option value="mixed">Campuran</option>
+
+</select>
       <h3>Panjang Kabel</h3>
 
 <input

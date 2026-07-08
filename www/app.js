@@ -217,6 +217,15 @@ document.getElementById("btnHitung").addEventListener("click", function () {
     const L = parseFloat(document.getElementById("length").value);
 
     const PF = parseFloat(document.getElementById("pf").value);
+  // ============================
+// INPUT BARU V3.1
+// ============================
+
+const frequency = parseFloat(document.getElementById("frequency").value);
+
+const efficiency = parseFloat(document.getElementById("efficiency").value);
+
+const loadType = document.getElementById("loadType").value;
 
     // ============================
     // VALIDASI
@@ -255,6 +264,42 @@ document.getElementById("btnHitung").addEventListener("click", function () {
     }
 
     const W = VA * PF;
+  // ============================
+// V3.1 POWER ANALYSIS
+// ============================
+
+// Daya Aktif (Input)
+const inputPower = W;
+
+// Daya Keluaran
+const outputPower = inputPower * (efficiency / 100);
+
+// Rugi-rugi Daya
+const powerLoss = inputPower - outputPower;
+
+// Daya Semu
+const kVA = VA / 1000;
+
+// Daya Aktif
+const kW = inputPower / 1000;
+
+// Daya Keluaran
+const outputKW = outputPower / 1000;
+
+// Rugi-rugi
+const lossKW = powerLoss / 1000;
+  // ============================
+// V3.1 REACTIVE POWER
+// ============================
+
+// Sudut Power Factor
+const phi = Math.acos(PF);
+
+// Daya Reaktif
+const VAR = VA * Math.sin(phi);
+
+// Daya Reaktif (kVAR)
+const kVAR = VAR / 1000;
 
     // ============================
     // LANJUT KE PART 3B
@@ -450,9 +495,86 @@ ${VA.toFixed(2)} VA
 ⚡ Daya Aktif
 </div>
 
+<div class="resultCard">
+
+<div class="resultTitle">
+⚡ Daya Aktif
+</div>
+
 <div class="resultValue">
 
 ${W.toFixed(2)} Watt
+
+<br>
+
+(${kW.toFixed(2)} kW)
+
+</div>
+
+</div>
+<div class="resultCard">
+
+<div class="resultTitle">
+
+⚡ Daya Reaktif
+
+</div>
+
+<div class="resultValue">
+
+${VAR.toFixed(2)} VAR
+
+<br>
+
+(${kVAR.toFixed(2)} kVAR)
+
+</div>
+
+</div>
+
+<div class="resultCard">
+
+<div class="resultTitle">
+
+⚙ Efisiensi Sistem
+
+</div>
+
+<div class="resultValue">
+
+${efficiency} %
+
+</div>
+
+</div>
+
+<div class="resultCard">
+
+<div class="resultTitle">
+
+📦 Jenis Beban
+
+</div>
+
+<div class="resultValue">
+
+${loadType}
+
+</div>
+
+</div>
+
+<div class="resultCard">
+
+<div class="resultTitle">
+
+🌐 Frekuensi
+
+</div>
+
+<div class="resultValue">
+
+${frequency} Hz
 
 </div>
 
