@@ -414,7 +414,35 @@ const kVAR = VAR / 1000;
 
 let statusInstalasi = "🟢 AMAN";
 let warningColor = "#00c853";
+// ============================
+// SMART WARNING REASON
+// ============================
 
+let warningReason = "";
+
+if (PF < 0.80) {
+
+    warningReason += "⚠ Power Factor rendah.<br>";
+
+}
+
+if (L > 50) {
+
+    warningReason += "⚠ Panjang kabel cukup panjang.<br>";
+
+}
+
+if (efficiency < 85) {
+
+    warningReason += "⚠ Efisiensi sistem rendah.<br>";
+
+}
+
+if (warningReason === "") {
+
+    warningReason = "✅ Semua parameter masih dalam batas normal.";
+
+}
 if (PF < 0.80 || L > 50 || efficiency < 85) {
 
     statusInstalasi = "🟡 PERLU PERHATIAN";
@@ -513,12 +541,20 @@ style="border:3px solid ${warningColor};">
 
 🚨 STATUS INSTALASI
 
+
 </div>
 
 <div class="resultValue"
 style="font-size:24px;color:${warningColor};font-weight:bold;">
 
 ${statusInstalasi}
+<br><br>
+
+<div style="font-size:15px;color:white;line-height:1.6">
+
+${warningReason}
+
+</div>
 
 </div>
 
