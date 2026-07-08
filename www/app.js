@@ -3,7 +3,30 @@
 // APP.JS V2.8 FINAL
 // PART 1
 // =====================================
+// ============================
+// SIWRAD ENGINEERING DATABASE
+// V3.3
+// ============================
 
+const engineeringDB = {
+
+    cableTemp: 70,
+
+    maxVoltageDrop: 5,
+
+    standardFrequency: 50,
+
+    standardVoltage1Phase: 220,
+
+    standardVoltage3Phase: 380,
+
+    recommendedPF: 0.85,
+
+    goodPF: 0.95,
+
+    minimumEfficiency: 85
+
+};
 // ================================
 // ELEMENT
 // ================================
