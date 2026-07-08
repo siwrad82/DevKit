@@ -408,6 +408,26 @@ const kVAR = VAR / 1000;
     // ============================
 
     let statusPF = "";
+  // ============================
+// SMART WARNING SYSTEM V3.2
+// ============================
+
+let statusInstalasi = "🟢 AMAN";
+let warningColor = "#00c853";
+
+if (PF < 0.80 || L > 50 || efficiency < 85) {
+
+    statusInstalasi = "🟡 PERLU PERHATIAN";
+    warningColor = "#ff9800";
+
+}
+
+if (PF < 0.70 || L > 100 || efficiency < 75) {
+
+    statusInstalasi = "🔴 KRITIS";
+    warningColor = "#f44336";
+
+}
 
     if (PF >= 0.95) {
 
@@ -486,6 +506,23 @@ else{
     // ============================
 
     document.getElementById("hasil").innerHTML = `
+    <div class="resultCard"
+style="border:3px solid ${warningColor};">
+
+<div class="resultTitle">
+
+🚨 STATUS INSTALASI
+
+</div>
+
+<div class="resultValue"
+style="font-size:24px;color:${warningColor};font-weight:bold;">
+
+${statusInstalasi}
+
+</div>
+
+</div>
 
 <div class="resultCard">
 
