@@ -448,7 +448,7 @@ let warningReason = "";
 
 let recommendation = "";
 
-if(PF < 0.80){
+if(PF < engineeringDB.recommendedPF){
 
     recommendation +=
 "💡 Pertimbangkan pemasangan Capacitor Bank.<br>";
@@ -476,7 +476,7 @@ if(recommendation===""){
 
 }
 
-if (PF < 0.80) {
+if (PF < engineeringDB.recommendedPF) {
 
     warningReason += "⚠ Power Factor rendah.<br>";
 
@@ -499,7 +499,7 @@ if (warningReason === "") {
     warningReason = "✅ Semua parameter masih dalam batas normal.";
 
 }
-if (PF < 0.80 || L > 50 || efficiency < 85) {
+if (PF < engineeringDB.recommendedPF || L > 50 || efficiency < engineeringDB.minimumEfficiency) {
 
     statusInstalasi = "🟡 PERLU PERHATIAN";
     warningColor = "#ff9800";
@@ -518,7 +518,7 @@ if (PF < 0.70 || L > 100 || efficiency < 75) {
         statusPF = "🟢 Sangat Baik";
 
     }
-    else if (PF >= 0.80) {
+    else if (PF >= engineeringDB.recommendedPF) {
 
         statusPF = "🟡 Cukup";
 
