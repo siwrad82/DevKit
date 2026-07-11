@@ -204,7 +204,21 @@ setTimeout(()=>{
 // ================================
 // NAVIGATION
 // ================================
+document.getElementById("btnDiagnosa").addEventListener("click", function(){
 
+    dashboard.classList.add("hidden");
+
+    document.getElementById("diagnosa").classList.remove("hidden");
+
+});
+
+document.getElementById("btnBackDiagnosa").addEventListener("click", function(){
+
+    document.getElementById("diagnosa").classList.add("hidden");
+
+    dashboard.classList.remove("hidden");
+
+});
 document.getElementById("btnCalc").addEventListener("click",function(){
 
     dashboard.classList.add("hidden");
